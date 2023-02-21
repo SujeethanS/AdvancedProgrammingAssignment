@@ -11,6 +11,7 @@ import com.dto.user.request.UserLoginReq;
 import com.dto.user.response.CustomerRes;
 import com.util.ApplicationConstant;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,6 +20,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class UserControllerImpl implements UserController {
 
     Logger logger = Logger.getLogger(this.getClass().getName());
@@ -57,7 +59,7 @@ public class UserControllerImpl implements UserController {
 
     @Override
     @PostMapping("/user/login")
-    public LoanOfferResponse login(UserLoginReq userLoginReq) {
+    public LoanOfferResponse login(@RequestBody UserLoginReq userLoginReq) {
         logger.info("UserControllerImpl-login-initiated");
         CommonResponse commonResponse = userBusiness.login(userLoginReq);
         return LoanOfferResponse.generateResponse(
