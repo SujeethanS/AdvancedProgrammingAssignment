@@ -18,17 +18,30 @@ export default function LoginForm() {
   const notification = (msg) => toast.error(msg, messageStyle);
   const [showPassword, setShowPassword] = useState(false);
 
+  const [myState, setMyState] = useState({
+    userName:"",
+    password:""
+  });
+
+  const handleChange = (event) => {
+    setMyState({
+      ...myState,
+      [event.target.name]:event.target.value,
+      [event.target.name]:event.target.value
+    })
+  }; 
+
   const handleClick = () =>  {
     const loginRequest = {
-    "username": "sujeethan",
-    "password": "askztgcv1"
+      "username": myState.userName,
+      "password": myState.password
     }
+
     http('/user/login',loginRequest).then(response=>{
       if(response.data.status === 3000){
         navigate('/dashboard', { replace: true });
       }else {
-        // notification(response.data.msg);
-        navigate('/register', { replace: true });
+        notification(response.data.msg);
       }
     })
   };
@@ -36,10 +49,11 @@ export default function LoginForm() {
   return (
     <>
       <Stack spacing={5}>
-        <TextField name="email" label="Email address" value={"sujeethan"}/>
+        <TextField name="userName" label="Email address" value={myState.userName} onChange={handleChange}/>
 
         <TextField
-          value={"zijwczts"}
+          value={myState.password} 
+          onChange={handleChange}
           name="password"
           label="Password"
           type={showPassword ? 'text' : 'password'}

@@ -76,7 +76,7 @@ export default function RegisterPage() {
         <Container maxWidth="sm">
           <StyledContent>
             <Typography variant="h4" gutterBottom>
-              Sign in to Bumble Bee
+              Sign up to Bumble Bee
             </Typography>
 
             <Typography variant="body2" sx={{ mb: 5 }}>

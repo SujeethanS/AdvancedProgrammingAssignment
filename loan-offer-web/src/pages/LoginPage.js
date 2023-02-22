@@ -77,7 +77,7 @@ export default function LoginPage() {
         <Container maxWidth="sm">
           <StyledContent>
             <Typography variant="h4" gutterBottom>
-              Sign up to Bumble Bee
+              Sign in to Bumble Bee
             </Typography>
 
             <Typography variant="body2" sx={{ mb: 5 }}>
