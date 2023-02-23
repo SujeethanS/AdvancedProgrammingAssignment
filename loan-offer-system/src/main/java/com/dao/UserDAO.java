@@ -6,6 +6,7 @@ import com.dto.user.request.CreateNewUserReq;
 import com.dto.user.request.GetCustomerDetailReq;
 import com.dto.user.request.UserLoginReq;
 import com.dto.user.response.CustomerRes;
+import com.dto.user.response.InstallmentPlanRes;
 
 import java.util.List;
 
@@ -37,4 +38,10 @@ public interface UserDAO {
      * @return
      */
     CommonResponse login(UserLoginReq userLoginReq);
+
+    /**
+     * getInstallmentPlans
+     * @return
+     */
+    List<InstallmentPlanRes> getInstallmentPlans();
 }

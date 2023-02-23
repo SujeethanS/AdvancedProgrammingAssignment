@@ -9,6 +9,7 @@ import com.dto.user.request.CreateNewUserReq;
 import com.dto.user.request.GetCustomerDetailReq;
 import com.dto.user.request.UserLoginReq;
 import com.dto.user.response.CustomerRes;
+import com.dto.user.response.InstallmentPlanRes;
 import com.util.ApplicationConstant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -66,5 +67,16 @@ public class UserControllerImpl implements UserController {
                 commonResponse.getValue(),
                 commonResponse.getStatusCode(),
                 commonResponse.getMsg());
+    }
+
+    @Override
+    @PostMapping("/get/installment/list")
+    public LoanOfferResponse getInstallmentPlans() {
+        logger.info("UserControllerImpl-getInstallmentPlans-initiated");
+        List<InstallmentPlanRes> installmentPlanList = userBusiness.getInstallmentPlans();
+        return LoanOfferResponse.generateResponse(
+                installmentPlanList,
+                ApplicationConstant.SuccessStatusCode,
+                ApplicationConstant.SuccessMsg);
     }
 }

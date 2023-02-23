@@ -4,8 +4,10 @@ public class UserLoginRes {
 
     private int userId;
     private int userType;
-    private String firstName;
-    private String lastName;
+    private String fullName;
+    private String userEmail;
+    private double usedAmount;
+    private int installmentPlan;
 
     public UserLoginRes() {
     }
@@ -26,20 +28,36 @@ public class UserLoginRes {
         this.userType = userType;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getUserEmail() {
+        return userEmail;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
+    }
+
+    public double getUsedAmount() {
+        return usedAmount;
+    }
+
+    public void setUsedAmount(double usedAmount) {
+        this.usedAmount = usedAmount;
+    }
+
+    public int getInstallmentPlan() {
+        return installmentPlan;
+    }
+
+    public void setInstallmentPlan(int installmentPlan) {
+        this.installmentPlan = installmentPlan;
     }
 
     @Override
@@ -47,8 +65,10 @@ public class UserLoginRes {
         return "UserLoginRes{" +
                 "userId=" + userId +
                 ", userType=" + userType +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
+                ", fullName='" + fullName + '\'' +
+                ", userEmail='" + userEmail + '\'' +
+                ", usedAmount=" + usedAmount +
+                ", installmentPlan=" + installmentPlan +
                 '}';
     }
 }

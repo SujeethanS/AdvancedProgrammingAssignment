@@ -33,4 +33,10 @@ public interface UserController {
      * @return
      */
     public LoanOfferResponse login(UserLoginReq userLoginReq);
+
+    /**
+     * getInstallmentPlans
+     * @return
+     */
+    public LoanOfferResponse getInstallmentPlans();
 }

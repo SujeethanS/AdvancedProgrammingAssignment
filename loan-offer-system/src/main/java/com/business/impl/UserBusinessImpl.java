@@ -10,6 +10,7 @@ import com.dto.user.request.EmailReq;
 import com.dto.user.request.GetCustomerDetailReq;
 import com.dto.user.request.UserLoginReq;
 import com.dto.user.response.CustomerRes;
+import com.dto.user.response.InstallmentPlanRes;
 import com.util.CommonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,7 +40,7 @@ public class UserBusinessImpl implements UserBusiness {
             EmailReq emailReq = new EmailReq();
             emailReq.setReceiver(createNewUserReq.getUserEmail());
             String bodyText = "Hi " + createNewUserReq.getLastName() + "\n" +
-                    "Please find your loan offer system login password is :" + randomPassword
+                    "Please find your loan offer system login username is : "+ createNewUserReq.getUserName() +"  password is : " + randomPassword
                     + "\n" + "Thanks, LoanOfferAdmin";
             logger.info("body--------------->" + bodyText);
             emailReq.setMessageBody(bodyText);
@@ -66,6 +67,12 @@ public class UserBusinessImpl implements UserBusiness {
     public CommonResponse login(UserLoginReq userLoginReq) {
         logger.info("UserBusinessImpl-login-initiated");
         return userDAO.login(userLoginReq);
+    }
+
+    @Override
+    public List<InstallmentPlanRes> getInstallmentPlans() {
+        logger.info("UserBusinessImpl-getInstallmentPlans-initiated");
+        return userDAO.getInstallmentPlans();
     }
 
 }

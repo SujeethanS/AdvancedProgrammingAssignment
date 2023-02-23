@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { toast } from 'react-toastify'
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 // @mui
-import { Link, Stack, IconButton, InputAdornment, TextField, Checkbox, Grid } from '@mui/material';
+import { Stack, IconButton, InputAdornment, TextField } from '@mui/material';
 // import axios from 'axios';
 import { LoadingButton } from '@mui/lab';
 // components
@@ -26,7 +26,6 @@ export default function LoginForm() {
   const handleChange = (event) => {
     setMyState({
       ...myState,
-      [event.target.name]:event.target.value,
       [event.target.name]:event.target.value
     })
   }; 
@@ -39,6 +38,12 @@ export default function LoginForm() {
 
     http('/user/login',loginRequest).then(response=>{
       if(response.data.status === 3000){
+        localStorage.setItem('userId',response.data.value.userId);
+        localStorage.setItem('userType',response.data.value.userType);
+        localStorage.setItem('fullName',response.data.value.fullName);
+        localStorage.setItem('userEmail',response.data.value.userEmail);
+        localStorage.setItem('usedAmount',response.data.value.usedAmount);
+        localStorage.setItem('installmentPlan',response.data.value.installmentPlan);
         navigate('/dashboard', { replace: true });
       }else {
         notification(response.data.msg);
@@ -49,7 +54,7 @@ export default function LoginForm() {
   return (
     <>
       <Stack spacing={5}>
-        <TextField name="userName" label="Email address" value={myState.userName} onChange={handleChange}/>
+        <TextField name="userName" label="User Name" value={myState.userName} onChange={handleChange}/>
 
         <TextField
           value={myState.password} 

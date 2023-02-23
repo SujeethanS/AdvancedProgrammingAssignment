@@ -8,6 +8,7 @@ import com.dto.user.request.CreateNewUserReq;
 import com.dto.user.request.GetCustomerDetailReq;
 import com.dto.user.request.UserLoginReq;
 import com.dto.user.response.CustomerRes;
+import com.dto.user.response.InstallmentPlanRes;
 import com.dto.user.response.UserLoginRes;
 import com.util.HashUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -163,21 +164,25 @@ public class UserDAOImpl implements UserDAO {
             callableStatement.registerOutParameter(4,Types.INTEGER);
             callableStatement.registerOutParameter(5,Types.VARCHAR);
             callableStatement.registerOutParameter(6,Types.VARCHAR);
-            callableStatement.registerOutParameter(7,Types.BOOLEAN);
+            callableStatement.registerOutParameter(7,Types.DOUBLE);
             callableStatement.registerOutParameter(8,Types.INTEGER);
-            callableStatement.registerOutParameter(9,Types.VARCHAR);
+            callableStatement.registerOutParameter(9,Types.BOOLEAN);
+            callableStatement.registerOutParameter(10,Types.INTEGER);
+            callableStatement.registerOutParameter(11,Types.VARCHAR);
             callableStatement.execute();
             callableStatement.getResultSet();
 
-            response.setRes((Boolean) callableStatement.getObject(7));
-            response.setStatusCode((Integer) callableStatement.getObject(8));
-            response.setMsg((String) callableStatement.getObject(9));
+            response.setRes((Boolean) callableStatement.getObject(9));
+            response.setStatusCode((Integer) callableStatement.getObject(10));
+            response.setMsg((String) callableStatement.getObject(11));
             if(response.isRes()){
                 UserLoginRes loginRes = new UserLoginRes();
-                loginRes.setFirstName( callableStatement.getString(3));
-                loginRes.setLastName( callableStatement.getString(4));
+                loginRes.setFullName( callableStatement.getString(3));
+                loginRes.setUserEmail( callableStatement.getString(4));
                 loginRes.setUserType( callableStatement.getInt(5));
                 loginRes.setUserId( callableStatement.getInt(6));
+                loginRes.setUsedAmount( callableStatement.getDouble(7));
+                loginRes.setInstallmentPlan( callableStatement.getInt(8));
 
                 response.setValue(loginRes);
             }
@@ -188,6 +193,37 @@ public class UserDAOImpl implements UserDAO {
             logger.info("Time taken for login in seconds: "+ (double)(System.currentTimeMillis() - startTime)/1000 );
         }
         return response;
+    }
+
+    @Override
+    public List<InstallmentPlanRes> getInstallmentPlans() {
+        long startTime = System.currentTimeMillis();
+        List<InstallmentPlanRes> installmentPlanList = null;
+        Connection connection = null;
+        CallableStatement callableStatement;
+        ResultSet resultSet;
+        try {
+            connection = DataSourceUtils.getConnection(Objects.requireNonNull(jdbcTemplate.getDataSource()));
+            callableStatement = connection.prepareCall(OfferDAOConstant.UserConstant.GET_INSTALLMENT_PLAN_LIST);
+            callableStatement.execute();
+            resultSet = callableStatement.getResultSet();
+            if(resultSet != null){
+                installmentPlanList = new ArrayList<>();
+                while (resultSet.next()){
+                    InstallmentPlanRes response = new InstallmentPlanRes();
+                    response.setInstallmentPlanId(resultSet.getInt(1));
+                    response.setPlanName(resultSet.getString(2));
+
+                    installmentPlanList.add(response);
+                }
+            }
+        }catch (SQLException exception){
+            logger.info("An error occurred in getInstallmentPlans "+ exception);
+        }finally {
+            DataSourceUtils.releaseConnection(connection,jdbcTemplate.getDataSource());
+            logger.info("Time taken for getInstallmentPlans in seconds: "+ (double)(System.currentTimeMillis() - startTime)/1000 );
+        }
+        return installmentPlanList;
     }
 
 }
