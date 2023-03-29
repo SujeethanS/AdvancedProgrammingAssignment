@@ -25,7 +25,7 @@ public class ProductDetailsReq {
         return brand;
     }
 
-    public void setBrandId(String brand) {
+    public void setBrand(String brand) {
         this.brand = brand;
     }
 
