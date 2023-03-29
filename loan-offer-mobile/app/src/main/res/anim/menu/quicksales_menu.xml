@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <!--<item
+        android:id="@+id/action_addcart"
+        android:icon="@drawable/ic_shopping_cart_white_48dp"
+        android:title="Add Cart"
+        android:orderInCategory="100"
+        app:actionLayout="@layout/menu_cartcount"
+        app:showAsAction="ifRoom"/>-->
+
+    <!--<item
+        android:id="@+id/search"
+        android:title="Search"
+        android:orderInCategory="100"
+        android:visible="true"
+        android:icon="@drawable/ic_action_action_search"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        app:showAsAction="always"
+        />-->
+    <!--<item
+        android:id="@+id/print"
+        android:title="print"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_action_print"
+        app:showAsAction="always"
+        />-->
+
+</menu>

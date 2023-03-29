@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "949478824656",
+    "firebase_url": "https://kale-online-order.firebaseio.com",
+    "project_id": "kale-online-order",
+    "storage_bucket": "kale-online-order.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:949478824656:android:dc6919c6fcd98aed",
+        "android_client_info": {
+          "package_name": "com.example.kaleMobilePOSBasic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "949478824656-skhfnlp5usqu6kk0f8tm81s0ccvj3frd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kaleMobilePOSBasic",
+            "certificate_hash": "2937bdffb9ee005785182fb13787b7f4d7fe028f"
+          }
+        },
+        {
+          "client_id": "949478824656-3c7s1tp00p1eu0epfu9c1sger8bntm2l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIQcMmaiA1G641lZA2QA21vpWis9BM8m4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "949478824656-3c7s1tp00p1eu0epfu9c1sger8bntm2l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

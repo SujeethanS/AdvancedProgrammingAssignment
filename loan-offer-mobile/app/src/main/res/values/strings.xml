@@ -1,0 +1,212 @@
+<resources>
+    <string name="app_name">Bumble Bee</string>
+    <string name="title_activity_signup_verify_phone">Activation phone</string>
+    <string name="title_activity_signup_virify_activition_code">Activation Code</string>
+    <string name="search_hint">Search</string>
+
+    <string name="countericon">CounterIcon</string>
+    <string name="countertextview">CounterTextView</string>
+
+    <string name="title_activity_wall">Bumble Bee</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="toast_message">Toast message</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="purshase_price">Purchase Price</string>
+    <string name="sub_category">Sub Category</string>
+    <string name="category">Category</string>
+    <string name="selling_price">Selling Price</string>
+    <string name="item_qty">Item Qty</string>
+    <string name="item_name">Item Name</string>
+    <string name="item_no">Item No</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="search_customer">Search Customer</string>
+
+    <string name="feedback">Enter your feedback here</string>
+
+    <!--credit payment popup-->
+    <string name="map_key" translatable="false">AIzaSyB_qsP8AOP_P0MdlPz-48TDaJYjTP3vbjo</string>
+
+    <!--Received Inventory Array-->
+
+    <!--Order Array-->
+
+    <!--Product Array-->
+
+    <!--User Array-->
+
+
+    <!--Customer Array-->
+
+
+    //button styles
+
+    <style name="MyButton" parent="Theme.AppCompat.Light">
+        <item name="colorControlHighlight">@color/indigo</item>
+        <item name="colorButtonNormal">@color/buttonBlue</item>
+    </style>
+
+    <style name="MyButton1" parent="Theme.AppCompat.Light">
+        <item name="colorControlHighlight">@color/White</item>
+        <item name="colorButtonNormal">@color/indigo</item>
+    </style>
+
+    <style name="MyButton2" parent="Theme.AppCompat.Light">
+        <item name="colorControlHighlight">@color/White</item>
+        <item name="colorButtonNormal">@color/black</item>
+    </style>
+
+    //user
+    <string name="user_name">User Name</string>
+    <string name="change_pass">Change Password</string>
+    <string name="user_des">User Designation</string>
+    <string name="user_save">Save Changes</string>
+    <string name="user_add_save">Add New User</string>
+
+    <string-array name="user_designation">
+        <item>user</item>
+        <item>admin</item>
+    </string-array>
+
+    <string name="URL_sample">http://54.200.81.66:3000/</string>
+
+    //modify
+    <string name="item_price">Item Price</string>
+    <string name="item_dis">Item Dis</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General Setting</string>
+    <string name="pref_header_print">Printer Setting</string>
+
+    <!-- Example settings for Data & Sync -->
+
+    <!-- Example settings for Notifications -->
+
+    <string name="Sales_Report">Sales Report</string>
+    <string name="company">Company</string>
+    <string name="order_details">Order Details</string>
+    <string name="setup">Setup</string>
+    <string name="registration">Registration</string>
+    <string name="printer">Printer</string>
+    <string name="item">Item</string>
+    <string name="user">User</string>
+    <string name="bill_preview">Bill Preview</string>
+    <string name="amount">Amount</string>
+    <string name="no_data_found">No Data Found</string>
+    <string name="end_date">end date</string>
+    <string name="start_date">start date</string>
+    <string name="total">Total</string>
+    <string name="order">Order</string>
+    <string name="_0_00">0.00</string>
+    <string name="total_sales">Total Sales :</string>
+    <string name="activate">Activate</string>
+    <string name="enter_code">Enter Code</string>
+    <string name="activate_code">Activate Code</string>
+    <string name="already_register">Already Registered</string>
+    <string name="company_name">Company Name</string>
+    <string name="new_register">New Register</string>
+    <string name="credit">Credit</string>
+    <string name="card">Card</string>
+    <string name="cheque">Cheque</string>
+    <string name="cash">Cash</string>
+    <string name="all">All</string>
+    <string name="qty_x_price">Price x Qty  </string>
+    <string name="view_order">View Order</string>
+    <string name="enter">Enter</string>
+    <string name="order_discount">Order Discount</string>
+    <string name="perchentage">%</string>
+    <string name="discount">Discount</string>
+    <string name="edit_price">Edit Price</string>
+    <string name="item_details">Item Details</string>
+    <string name="add">Add</string>
+    <string name="add_category">Add Category</string>
+    <string name="user_address">User Address</string>
+    <string name="password">Password</string>
+    <string name="modify_user">Modify User</string>
+    <string name="modify_item">Modify Item</string>
+    <string name="expiry_date">Expiry Date</string>
+    <string name="default_discount">Default Discount</string>
+    <string name="max_discount">Max Discount</string>
+    <string name="reorder_quantity">Reorder Quantity</string>
+    <string name="track_with_inventory">Track with Inventory</string>
+    <string name="more">More</string>
+    <string name="update">update</string>
+    <string name="select_product_category">Select Product Category</string>
+    <string name="select_product_sub_category">Select Product Brand</string>
+    <string name="select_item">Select Item</string>
+    <string name="selected_items">Selected Items View</string>
+    <string name="devices_list">Devices List</string>
+    <string name="search_printer">Search Printer</string>
+    <string name="_80mm">80mm</string>
+    <string name="_58mm">58mm</string>
+    <string name="paper_size">Paper Size</string>
+    <string name="printer_type">Printer Type</string>
+    <string name="printer_connect">printer Connect</string>
+    <string name="test_print">Test Print</string>
+    <string name="reset">Reset</string>
+    <string name="company_address">Company Address</string>
+    <string name="company_store_address">Company Store Address</string>
+    <string name="contact_name">Contact Name</string>
+    <string name="order_id">Order Id</string>
+    <string name="_1">1</string>
+    <string name="location_id">Location Id</string>
+    <string name="all_user_to_sign_up_cloud_setting">All User to Sign Up Cloud Setting</string>
+    <string name="company_id">Company Id</string>
+    <string name="client_id">Client Id</string>
+    <string name="item_namee">Item Name:</string>
+    <string name="item_qtyy">Item Qty:</string>
+
+    <string name="catalog_message">We have industry wise item catalog,
+        Do you want to download catalog item ?</string>
+
+    <string name="balance">Balance :</string>
+    <string name="received">Received :</string>
+    <string name="kale_mobile_pos">Bumble Bee</string>
+    <string name="done">Order successfully created</string>
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+    <string name="get_start">Get Started</string>
+    <string name="expiry_items">Expiry Items</string>
+    <string name="_0_0">0.0</string>
+    <string name="reorder_items">ReOrder Items</string>
+    <string name="send_message">send message</string>
+    <string name="select_all">select all</string>
+    <string name="message">Message</string>
+    <string name="no_categories">No Categories</string>
+    <string name="kale_system">Kale System</string>
+    <string name="no_item">No items</string>
+    <string name="clear">Clear</string>
+    <string name="_0">0</string>
+    <string name="login">LOGIN</string>
+    <string name="payment_details">Payment Details</string>
+    <string name="please_wait">Please wait</string>
+
+
+    <string name="others">Others</string>
+    <string name="more_capital">MORE</string>
+    <string name="less">LESS</string>
+    <string name="buy_first_and_pay_later">Buy first and pay later</string>
+    <string name="bumble_bee">Bumble bee</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="logout">Logout</string>
+    <string name="add_cart">Add Cart</string>
+    <string name="categories">Categories</string>
+    <string name="search">Search</string>
+
+
+    <string-array name="payment">
+        <item>Cash</item>
+        <item>Card</item>
+        <item>Cheque</item>
+    </string-array>
+
+</resources>
+

@@ -1,0 +1,81 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/darkGreen</item>
+        <item name="colorPrimaryDark">@color/gray</item>
+        <item name="colorAccent">@color/darkGreen</item>
+        <item name="cc_tv_background_color">@color/red</item>
+        <item name="android:textColorHint">#2c73d2</item>
+
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:background">#000000</item>
+        <item name="cc_tv_background_color">@color/red</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <item name="cc_tv_background_color">@color/red</item>
+    </style>
+
+    <style name="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1.25dp</item>
+        <item name="android:background">?android:attr/listDivider</item>
+        <item name="android:color">@color/white</item>
+
+
+    </style>
+
+
+    <style name="MenuTextStyle">
+        <item name="android:textColor">#008000</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:background">#000000</item>
+    </style>
+
+    <style name="MSV_ImageButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
+        <item name="android:paddingLeft">@dimen/search_icon_padding</item>
+        <item name="android:paddingRight">@dimen/search_icon_padding</item>
+    </style>
+
+    <style name="savebutton_style">
+        <item name="android:text">Save</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:background">@drawable/button_round</item>
+        <item name="android:textSize">@dimen/text_Size</item>
+        <item name="android:layout_marginBottom">@dimen/Button_margin_bottom</item>
+    </style>
+
+    <style name="FullscreenTheme" parent="AppTheme">
+        <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
+        <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
+    </style>
+
+    <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+
+    <style name="CommonButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/common_button_bg</item>
+    </style>
+
+
+</resources>

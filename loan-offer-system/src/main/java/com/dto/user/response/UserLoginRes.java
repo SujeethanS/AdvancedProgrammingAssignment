@@ -8,6 +8,7 @@ public class UserLoginRes {
     private String userEmail;
     private double usedAmount;
     private int installmentPlan;
+    private String userKey;
 
     public UserLoginRes() {
     }
@@ -60,6 +61,14 @@ public class UserLoginRes {
         this.installmentPlan = installmentPlan;
     }
 
+    public String getUserKey() {
+        return userKey;
+    }
+
+    public void setUserKey(String userKey) {
+        this.userKey = userKey;
+    }
+
     @Override
     public String toString() {
         return "UserLoginRes{" +
@@ -69,6 +78,7 @@ public class UserLoginRes {
                 ", userEmail='" + userEmail + '\'' +
                 ", usedAmount=" + usedAmount +
                 ", installmentPlan=" + installmentPlan +
+                ", userKey='" + userKey + '\'' +
                 '}';
     }
 }

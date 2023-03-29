@@ -75,4 +75,5 @@ public class UserBusinessImpl implements UserBusiness {
         return userDAO.getInstallmentPlans();
     }
 
+
 }

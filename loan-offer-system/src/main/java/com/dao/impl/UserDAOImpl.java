@@ -2,6 +2,13 @@ package com.dao.impl;
 
 import com.dao.OfferDAOConstant;
 import com.dao.UserDAO;
+import com.dto.product.Request.NewBrandReq;
+import com.dto.product.Request.NewCategoryReq;
+import com.dto.product.Request.NewProductReq;
+import com.dto.product.Request.ProductDetailsReq;
+import com.dto.product.Response.BrandRes;
+import com.dto.product.Response.CategoryRes;
+import com.dto.product.Response.ProductDetailsRes;
 import com.dto.response.CommonResponse;
 import com.dto.response.GeneralResponse;
 import com.dto.user.request.CreateNewUserReq;
@@ -11,6 +18,7 @@ import com.dto.user.response.CustomerRes;
 import com.dto.user.response.InstallmentPlanRes;
 import com.dto.user.response.UserLoginRes;
 import com.util.HashUtil;
+import com.util.SecureKeyUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceUtils;
@@ -50,20 +58,21 @@ public class UserDAOImpl implements UserDAO {
             callableStatement.setObject(8,createNewUserReq.getUserEmail(),Types.VARCHAR);
             callableStatement.setObject(9,createNewUserReq.getUserMobileNumber(),Types.VARCHAR);
             callableStatement.setObject(10,createNewUserReq.getNic(),Types.VARCHAR);
-            callableStatement.setObject(11,createNewUserReq.getCustomerId(),Types.INTEGER);
-            callableStatement.setObject(12,createNewUserReq.getLoanBalance(),Types.DOUBLE);
-            callableStatement.setObject(13,createNewUserReq.getUsedAmount(),Types.DOUBLE);
-            callableStatement.setObject(14,createNewUserReq.getInstallPlan(),Types.INTEGER);
+            callableStatement.setObject(11, SecureKeyUtil.getSecureRandomKey(),Types.VARCHAR);
+            callableStatement.setObject(12,createNewUserReq.getCustomerId(),Types.INTEGER);
+            callableStatement.setObject(13,createNewUserReq.getLoanBalance(),Types.DOUBLE);
+            callableStatement.setObject(14,createNewUserReq.getUsedAmount(),Types.DOUBLE);
+            callableStatement.setObject(15,createNewUserReq.getInstallPlan(),Types.INTEGER);
 
-            callableStatement.registerOutParameter(15,Types.BOOLEAN);
-            callableStatement.registerOutParameter(16,Types.INTEGER);
-            callableStatement.registerOutParameter(17,Types.VARCHAR);
+            callableStatement.registerOutParameter(16,Types.BOOLEAN);
+            callableStatement.registerOutParameter(17,Types.INTEGER);
+            callableStatement.registerOutParameter(18,Types.VARCHAR);
 
             callableStatement.executeUpdate();
             callableStatement.getResultSet();
-            response.setRes((Boolean) callableStatement.getObject(15));
-            response.setStatusCode((Integer) callableStatement.getObject(16));
-            response.setMsg((String) callableStatement.getObject(17));
+            response.setRes((Boolean) callableStatement.getObject(16));
+            response.setStatusCode((Integer) callableStatement.getObject(17));
+            response.setMsg((String) callableStatement.getObject(18));
         }catch (SQLException exception){
             logger.info("An error occurred in createNewUser "+ exception);
         }finally {
@@ -166,15 +175,16 @@ public class UserDAOImpl implements UserDAO {
             callableStatement.registerOutParameter(6,Types.VARCHAR);
             callableStatement.registerOutParameter(7,Types.DOUBLE);
             callableStatement.registerOutParameter(8,Types.INTEGER);
-            callableStatement.registerOutParameter(9,Types.BOOLEAN);
-            callableStatement.registerOutParameter(10,Types.INTEGER);
-            callableStatement.registerOutParameter(11,Types.VARCHAR);
+            callableStatement.registerOutParameter(9,Types.VARCHAR);
+            callableStatement.registerOutParameter(10,Types.BOOLEAN);
+            callableStatement.registerOutParameter(11,Types.INTEGER);
+            callableStatement.registerOutParameter(12,Types.VARCHAR);
             callableStatement.execute();
             callableStatement.getResultSet();
 
-            response.setRes((Boolean) callableStatement.getObject(9));
-            response.setStatusCode((Integer) callableStatement.getObject(10));
-            response.setMsg((String) callableStatement.getObject(11));
+            response.setRes((Boolean) callableStatement.getObject(10));
+            response.setStatusCode((Integer) callableStatement.getObject(11));
+            response.setMsg((String) callableStatement.getObject(12));
             if(response.isRes()){
                 UserLoginRes loginRes = new UserLoginRes();
                 loginRes.setFullName( callableStatement.getString(3));
@@ -183,6 +193,7 @@ public class UserDAOImpl implements UserDAO {
                 loginRes.setUserId( callableStatement.getInt(6));
                 loginRes.setUsedAmount( callableStatement.getDouble(7));
                 loginRes.setInstallmentPlan( callableStatement.getInt(8));
+                loginRes.setUserKey( callableStatement.getString(9));
 
                 response.setValue(loginRes);
             }

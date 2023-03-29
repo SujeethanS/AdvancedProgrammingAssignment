@@ -1,5 +1,12 @@
 package com.dao;
 
+import com.dto.product.Request.NewBrandReq;
+import com.dto.product.Request.NewCategoryReq;
+import com.dto.product.Request.NewProductReq;
+import com.dto.product.Request.ProductDetailsReq;
+import com.dto.product.Response.BrandRes;
+import com.dto.product.Response.CategoryRes;
+import com.dto.product.Response.ProductDetailsRes;
 import com.dto.response.CommonResponse;
 import com.dto.response.GeneralResponse;
 import com.dto.user.request.CreateNewUserReq;
@@ -44,4 +51,5 @@ public interface UserDAO {
      * @return
      */
     List<InstallmentPlanRes> getInstallmentPlans();
+
 }

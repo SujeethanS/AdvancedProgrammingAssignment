@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.kalesystems.kaleMobileOnLineOrderBasic.com.kalesystems.kaleOnLineApp.MainActivity">
+
+
+   <!-- <item
+        android:id="@+id/add"
+        android:title="Add"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_action_add"
+        app:showAsAction="ifRoom"
+        />-->
+
+    <item
+        android:id="@+id/m_search"
+        android:icon="@drawable/search_icon_green"
+        android:title="item_search"
+        app:actionLayout="@layout/search_view_layout"
+        app:showAsAction="ifRoom|collapseActionView" />
+
+</menu>

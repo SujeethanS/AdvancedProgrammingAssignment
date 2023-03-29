@@ -1,0 +1,30 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/search_Item"
+        android:title="@string/search"
+        android:orderInCategory="1"
+        android:visible="true"
+        android:icon="@drawable/ic_action_action_search"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="ifRoom|collapseActionView"
+        />
+
+    <item
+        android:id="@+id/action_addcart"
+        android:icon="@drawable/ic_shopping_cart_white_48dp"
+        android:title="@string/add_cart"
+        android:orderInCategory="2"
+        app:actionLayout="@layout/custom_action_item_layout"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/categories"
+        android:title="@string/categories"
+        android:visible="true"
+        android:orderInCategory="4"
+        app:showAsAction="never" />
+
+
+</menu>

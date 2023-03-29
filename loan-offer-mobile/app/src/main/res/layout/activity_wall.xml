@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/wallActivity_drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/AppTheme.NoActionBar"
+    tools:openDrawer="start"
+    android:backgroundTint="#00ffffff"
+    android:background="#00ffffff">
+
+    <include
+        layout="@layout/app_bar_wall"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        android:background="@color/White"
+        app:headerLayout="@layout/nav_header_wall"
+        app:menu="@menu/activity_wall_drawer"
+        app:itemTextColor="@color/Black"
+        app:itemTextAppearance="@style/TextAppearance.AppCompat.Menu">
+
+        <!--<ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="0dp"
+            android:foregroundGravity="center"
+            android:src="@drawable/logokale" />-->
+
+    </com.google.android.material.navigation.NavigationView>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
+
+

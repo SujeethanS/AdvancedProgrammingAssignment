@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/search_customer"
+        android:title="Search"
+        android:orderInCategory="100"
+        android:visible="true"
+        android:icon="@drawable/ic_action_action_search"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        app:showAsAction="ifRoom"
+        />
+
+    <item
+        android:id="@+id/add_customer"
+        android:title="Add Customer"
+        android:orderInCategory="100"
+        android:icon="@drawable/add"
+        app:showAsAction="ifRoom"
+        />
+
+</menu>

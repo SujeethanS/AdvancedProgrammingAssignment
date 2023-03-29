@@ -10,13 +10,16 @@ import Iconify from '../../../components/iconify';
 import messageStyle  from '../../../utils/messageStyle'
 // post api call
 import { http } from '../../../service/APIService';
+
 // ----------------------------------------------------------------------
 
 export default function LoginForm() {
 
   const navigate = useNavigate();
-  const notification = (msg) => toast.error(msg, messageStyle);
+  const notificationError = (msg) => toast.error(msg, messageStyle);
+  const notificationSuccess = (msg) => toast.success(msg, messageStyle);
   const [showPassword, setShowPassword] = useState(false);
+  
 
   const [myState, setMyState] = useState({
     userName:"",
@@ -30,31 +33,66 @@ export default function LoginForm() {
     })
   }; 
 
+  const [error,setError] = useState({
+    userName:false,
+    password:false
+  });
+
   const handleClick = () =>  {
-    const loginRequest = {
-      "username": myState.userName,
-      "password": myState.password
+
+    const errorObj = {
+      userName:false,
+      password:false,
     }
 
-    http('/user/login',loginRequest).then(response=>{
-      if(response.data.status === 3000){
-        localStorage.setItem('userId',response.data.value.userId);
-        localStorage.setItem('userType',response.data.value.userType);
-        localStorage.setItem('fullName',response.data.value.fullName);
-        localStorage.setItem('userEmail',response.data.value.userEmail);
-        localStorage.setItem('usedAmount',response.data.value.usedAmount);
-        localStorage.setItem('installmentPlan',response.data.value.installmentPlan);
-        navigate('/dashboard', { replace: true });
-      }else {
-        notification(response.data.msg);
+    if(myState.userName){
+      errorObj.userName = false
+    }else{
+      errorObj.userName = true
+    }
+
+    if(myState.password){
+      errorObj.password = false
+    }else{
+      errorObj.password = true
+    }
+    
+    setError(errorObj)
+
+    if(!errorObj.userName && !errorObj.password){
+      const loginRequest = {
+        "username": myState.userName,
+        "password": myState.password
       }
-    })
+  
+      http('/user/login',loginRequest).then(response=>{
+        if(response.data.status === 3000){
+          notificationSuccess(response.data.msg);
+          localStorage.setItem('userId',response.data.value.userId);
+          localStorage.setItem('userType',response.data.value.userType);
+          localStorage.setItem('fullName',response.data.value.fullName);
+          localStorage.setItem('userEmail',response.data.value.userEmail);
+          localStorage.setItem('usedAmount',response.data.value.usedAmount);
+          localStorage.setItem('installmentPlan',response.data.value.installmentPlan);
+          navigate('/dashboard', { replace: true });
+        }else {
+          notificationError(response.data.msg);
+        }
+      })
+    }
   };
 
   return (
     <>
       <Stack spacing={5}>
-        <TextField name="userName" label="User Name" value={myState.userName} onChange={handleChange}/>
+        <TextField 
+          name="userName" 
+          label="User Name"
+          autoComplete="email"
+          value={myState.userName} 
+          helperText={error.userName ? "Invalid User Name" : ""}
+          error={error.userName}
+          onChange={handleChange}/>
 
         <TextField
           value={myState.password} 
@@ -62,6 +100,8 @@ export default function LoginForm() {
           name="password"
           label="Password"
           type={showPassword ? 'text' : 'password'}
+          helperText={error.password ? "Invalid Password" : ""}
+          error={error.password}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
@@ -82,7 +122,7 @@ export default function LoginForm() {
       </Stack> */}
 
         <Stack  spacing={5} direction="column" alignItems="center" justifyContent="space-between" sx={{ my: 5 }}>
-          <LoadingButton fullWidth size="large" type="submit" variant="contained" onClick={handleClick}>
+          <LoadingButton name="login" fullWidth size="large" type="submit" variant="contained" onClick={handleClick}>
             Login
           </LoadingButton>
         </Stack>

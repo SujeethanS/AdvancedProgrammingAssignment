@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".matchbox">
+
+    <group android:checkableBehavior="single">
+
+        <!--<item
+            android:id="@+id/menu_company"
+            android:icon="@drawable/company_icon"
+            android:title="Company"
+            android:textSize="2sp"/>-->
+
+        <item
+            android:id="@+id/menu_dashboard"
+            android:icon="@drawable/dash_board_icon"
+            android:title="Dashboard"
+            android:textSize="2sp"/>
+        <item
+            android:id="@+id/menu_setup"
+            android:icon="@drawable/setup_icon"
+            android:title="Setup"
+            android:textSize="2sp"/>
+        <item
+            android:id="@+id/menu_location"
+            android:icon="@drawable/location_icon"
+            android:title="Location"
+            android:textSize="2sp"/>
+        <item
+            android:id="@+id/menu_about"
+            android:icon="@drawable/ic_action_info"
+            android:title="About Us"
+            android:textSize="2sp"/>
+
+        <!--<item
+            android:id="@+id/menu_CreditSale"
+            android:icon="@drawable/print_icon"
+            android:title="Credit Sale"
+            android:textSize="2sp"/>
+        <item
+            android:id="@+id/menu_Settlement"
+            android:icon="@drawable/print_icon"
+            android:title="Settlement"
+            android:textSize="2sp"/>
+
+        <item
+            android:id="@+id/menu_Company"
+            android:icon="@drawable/print_icon"
+            android:title="Company"
+            android:textSize="2sp"/>
+        <item
+            android:id="@+id/menu_Setup"
+            android:icon="@drawable/print_icon"
+            android:title="Setup"
+            android:textSize="2sp"/>-->
+
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_feedback"
+                android:icon="@drawable/share_icon"
+                android:title="Feedback" />
+            <item
+            android:id="@+id/nav_send"
+            android:icon="@drawable/send_icon"
+            android:title="Send" />
+
+            <item
+                android:id="@+id/nav_help"
+                android:icon="@drawable/ic_action_help"
+                android:title="Help" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/menu_exit"
+        android:icon="@drawable/exit_navigation_icon"
+        android:title="Logout"
+        android:textSize="2sp"/>
+
+</menu>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.percentlayout.widget.PercentRelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:id="@+id/mainRelativeLayout"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:paddingLeft="0dp"
+android:paddingRight="0dp"
+android:paddingTop="0dp">
+
+    <fragment
+        android:name="com.example.customerOrderApp.OrderListFragment"
+        android:id="@+id/orderSearchFragment"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"/>
+
+    <include layout="@layout/order_search_fragment"/>
+    <include layout="@layout/fragment_order_list"/>
+    <include layout="@layout/fragment_order_payment"/>
+
+</androidx.percentlayout.widget.PercentRelativeLayout>

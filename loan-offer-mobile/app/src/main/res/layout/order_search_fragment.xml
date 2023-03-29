@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    class=".OrderSearchFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pureWhite">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarOrder"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_margin="0dp"
+        android:background="@color/toolBarBlue"
+        android:contentInsetStart="0dp"
+        android:contentInsetLeft="0dp"
+        android:contentInsetEnd="0dp"
+        android:contentInsetRight="0dp"
+        android:padding="0dp"
+        android:textAlignment="textStart"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp"
+        app:itemTextAppearance="@style/MenuTextStyle"
+        app:itemTextColor="@color/pureWhite"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:titleTextColor="@color/pureWhite"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/select_type_text_view"
+            android:layout_width="63dp"
+            android:layout_height="40dp"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:padding="10dp"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text=""
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/categoryVisibleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="55dp"
+        android:background="@color/pureWhite"
+        android:visibility="gone">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="top"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:id="@+id/textView_Category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/indigo"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="@string/select_product_category"
+                android:textColor="@color/darkGreen"
+                android:textSize="16sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/orderActivityGridMenu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/categorySearch_nodataFound"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="No Categories"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/subcategoryVisibleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="55dp"
+        android:background="@color/pureWhite"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:id="@+id/textView_Subcategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/indigo"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="@string/select_product_sub_category"
+                android:textColor="@color/darkGreen"
+                android:textSize="16sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/subcategoryActivityGridMenu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp" />
+
+            <ProgressBar
+                android:id="@+id/progressBar_cyclic_subCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:minWidth="50dp"
+                android:minHeight="50dp"
+                android:visibility="gone"
+                tools:ignore="MissingConstraints,ObsoleteLayoutParam" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/itemVisibleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="55dp"
+        android:background="@color/pureWhite"
+        android:visibility="visible">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="top"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_view_order"
+            tools:layout_editor_absoluteX="0dp">
+
+            <TextView
+                android:id="@+id/textView_Items"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/indigo"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="@string/select_item"
+                android:textColor="@color/buttonBlue"
+                android:textSize="16sp" />
+
+
+            <include layout="@layout/skeleton_shimmer_layout" />
+
+            <androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/itemActivityGridMenu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:columnWidth="120dp"
+                android:horizontalSpacing="10dp"
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="15dp"
+                android:visibility="gone"
+                tools:ignore="RtlHardcoded,RtlSymmetry" />
+
+            <ProgressBar
+                android:id="@+id/progressBar_cyclic"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:minWidth="50dp"
+                android:minHeight="50dp"
+                android:visibility="gone"
+                tools:ignore="ObsoleteLayoutParam" />
+
+            <TextView
+                android:id="@+id/itemSearch_nodataFound"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="No Items"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/shoppingCardButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_action_shoppng_card"
+            android:theme="@style/MyButton2"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.333"
+            app:layout_constraintStart_toStartOf="@+id/number_card_view"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription,RtlHardcoded" />
+
+        <androidx.cardview.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/number_card_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="55dp"
+            app:cardBackgroundColor="@color/Black"
+            card_view:cardCornerRadius="5dp"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:id="@+id/shoppingCardNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/pureWhite"
+                android:textSize="20sp"
+                android:theme="@style/MyButton" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <Button
+            android:id="@+id/btn_view_order"
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:padding="20dp"
+            android:text="@string/view_order"
+            android:textColor="@color/pureWhite"
+            android:textSize="20sp"
+            android:theme="@style/MyButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

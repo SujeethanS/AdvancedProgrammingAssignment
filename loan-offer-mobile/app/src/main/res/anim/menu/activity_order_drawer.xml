@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".matchbox">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/menu_home"
+            android:icon="@drawable/print_icon"
+            android:title="Home"
+
+            android:textSize="2sp"/>
+
+        <item
+            android:id="@+id/menu_Customer"
+            android:icon="@drawable/print_icon"
+            android:title="Customer"
+            android:textSize="2sp"/>
+        <item
+            android:id="@+id/menu_Expense"
+            android:icon="@drawable/print_icon"
+            android:title="Expense"
+            android:textSize="2sp"/>
+        <item
+            android:id="@+id/menu_Report"
+            android:icon="@drawable/print_icon"
+            android:title="Report"
+            android:textSize="2sp"/>
+
+        <item
+            android:id="@+id/menu_CreditSale"
+            android:icon="@drawable/print_icon"
+            android:title="Credit Sale"
+            android:textSize="2sp"/>
+        <item
+            android:id="@+id/menu_Settlement"
+            android:icon="@drawable/print_icon"
+            android:title="Settlement"
+            android:textSize="2sp"/>
+
+        <item
+            android:id="@+id/menu_feedback"
+            android:icon="@drawable/print_icon"
+            android:title="Feedback"
+            android:textSize="2sp"/>
+        <item
+            android:id="@+id/menu_Setting"
+            android:icon="@drawable/print_icon"
+            android:title="Setting"
+            android:textSize="2sp"/>
+
+
+    </group>
+
+
+
+</menu>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_marginTop="20dp"
+    android:background="@color/toolBarBlue"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:backgroundTint="@color/toolBarBlue">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp"
+        android:text="@string/bumble_bee"
+        android:layout_gravity="left"
+        android:gravity="left"
+        android:textSize="24dp"
+        android:textColor="#ffffff"
+        android:background="@color/toolBarBlue"/>
+    <View
+        android:id="@+id/main_divider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:textColor="@color/White"
+        android:background="#aeacac"
+        style="@style/Divider"/>
+
+
+</LinearLayout>

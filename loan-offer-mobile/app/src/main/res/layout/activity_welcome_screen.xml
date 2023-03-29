@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.customerOrderApp.WelcomeScreen.WelcomeActivity">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayoutWelcome"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:minHeight="?attr/actionBarSize"
+        app:tabMaxWidth="0dp"
+        app:tabGravity="fill"
+        app:tabTextColor="@color/YellowGreen"
+        app:tabMode="fixed"
+        app:tabBackground="@drawable/tab_color_selector"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pagerWelcome"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/layoutDots"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dots_height"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dots_margin_bottom"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:alpha=".5"
+        android:layout_above="@id/layoutDots"
+        android:background="@color/black"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="@null"
+        android:text="@string/next"
+        android:visibility="gone"
+        android:textColor="@color/darkGreen" />
+
+    <Button
+        android:id="@+id/btn_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@null"
+        android:visibility="gone"
+        android:text="@string/skip"
+        android:textColor="@color/darkGreen" />
+
+  <!--  <include
+        android:id="@+id/news_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/welcome1_registration"
+        android:visibility="gone"/>
+
+    <include android:id="@+id/news_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/welcome2_item_catalog"
+        android:visibility="gone"/>
+
+    <include
+        android:id="@+id/news_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/welcome3_printer_connection"
+        android:visibility="gone"/>
+
+    <include
+        android:id="@+id/news_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/welcome4_setting"
+        android:visibility="gone"/>
+
+
+    <include
+        android:id="@+id/news_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/welcome5_preference"
+        android:visibility="gone"/>
+
+
+    <include
+        android:id="@+id/news_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/welcome6_confirm_details"
+        android:visibility="gone"/>-->
+
+</RelativeLayout>

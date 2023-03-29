@@ -44,4 +44,5 @@ public interface UserBusiness {
      * @return
      */
     List<InstallmentPlanRes> getInstallmentPlans();
+
 }

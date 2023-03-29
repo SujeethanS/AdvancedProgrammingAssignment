@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/darkGreen"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/selected_items"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="@color/pureWhite"
+            android:textSize="18sp"
+            android:layout_weight="1"/>
+
+        <ImageButton
+            android:id="@+id/imgBtn_close_cardClick"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:background="@drawable/closered"
+            android:layout_weight="1"
+            />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/SelectedItemList_Recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:background="@color/recycler_color">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>

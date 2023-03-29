@@ -1,0 +1,54 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/search_Item"
+        android:title="Search"
+        android:orderInCategory="1"
+        android:visible="true"
+        android:icon="@drawable/ic_action_action_search"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        app:showAsAction="always|collapseActionView"
+        />
+
+    <item
+        android:id="@+id/action_addcart"
+        android:icon="@drawable/ic_shopping_cart_white_48dp"
+        android:title="Add Cart"
+        android:orderInCategory="2"
+        android:animateLayoutChanges="false"
+        app:actionLayout="@layout/menu_cartcount"
+        app:showAsAction="always"/>
+
+    <!--<item
+        android:id="@+id/badge"
+        android:orderInCategory="2"
+        android:title="card"
+        android:icon="@drawable/ic_shopping_cart_white_48dp"
+        app:actionLayout="@layout/actionbar_badge_layout"
+        app:showAsAction="always" />-->
+
+    <!--<item
+        android:id="@+id/print"
+        android:title="print"
+        android:visible="true"
+        android:orderInCategory="3"
+        android:icon="@drawable/ic_action_print"
+        app:showAsAction="ifRoom" />-->
+
+    <item
+        android:id="@+id/categories"
+        android:title="Categories"
+        android:visible="true"
+        android:orderInCategory="4"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/addItem"
+        android:title="Add Item"
+        android:visible="true"
+        android:orderInCategory="3"
+        android:icon="@drawable/add"
+        app:showAsAction="never" />
+
+</menu>

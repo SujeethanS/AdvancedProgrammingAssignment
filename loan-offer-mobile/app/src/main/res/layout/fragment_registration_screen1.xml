@@ -1,0 +1,374 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/registerConstain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/pureWhite"
+        >
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            xmlns:app="http://schemas.android.com/tools"
+            app:ignore="NamespaceTypo"
+            android:orientation="vertical"
+            android:background="@color/pureWhite">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Company details"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:layout_weight="1"
+                    app:ignore="InefficientWeight"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/leanear_newRegistration_popup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible"
+                android:layout_marginTop="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    app:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:padding="10dp"
+                        android:background="@drawable/company_icon"
+                        app:ignore="ContentDescription" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:layout_marginTop="20dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="30dp"
+                        android:paddingRight="30dp">
+
+                        <EditText
+                            android:id="@+id/companyName_popup"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/company_name"
+                            android:gravity="left"
+                            android:textSize="16sp"
+                            android:digits="0123456789,QWERTYUIOPASDFGHJKLZXCVBNM qwertzuiopasdfghjklyxcvbnm"
+                            android:inputType="textCapWords"
+                            android:textColor="@color/black"
+                            app:ignore="Autofill" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="30dp"
+                        android:paddingRight="30dp">
+
+                        <EditText
+                            android:id="@+id/companyAddress_popup"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/company_address"
+                            android:gravity="left"
+                            android:textSize="16sp"
+                            android:digits="0123456789,QWERTYUIOPASDFGHJKLZXCVBNM qwertzuiopasdfghjklyxcvbnm"
+                            android:inputType="textCapWords"
+                            android:textColor="@color/black"
+                            app:ignore="Autofill" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="30dp"
+                        android:paddingRight="30dp">
+
+                        <EditText
+                            android:id="@+id/companyNumber_register_popup"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="@string/phone_number"
+                            android:gravity="left"
+                            android:textSize="16sp"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/black"
+                            app:ignore="Autofill" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp">
+
+
+                    <Spinner
+                        android:id="@+id/industryType_spinner_popup"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:tooltipText="Industry Type"
+                        android:gravity="left"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="30dp"
+                        android:visibility="gone"
+                        android:layout_marginRight="30dp"
+                        android:backgroundTint="@color/darkGreen"
+                        />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="30dp"
+                        android:paddingRight="30dp">
+
+                        <EditText
+                            android:id="@+id/locationId_register_popup"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Location ID"
+                            android:text="@string/_1"
+                            android:gravity="left"
+                            android:textSize="16sp"
+                            android:focusable="false"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/black"
+                            app:ignore="Autofill"
+                            android:visibility="gone"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/button_Register_popup"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/save"
+                    android:textSize="18sp"
+                    android:textColor="@color/White"
+                    android:layout_gravity="center"
+                    android:theme="@style/MyButton"
+                    android:layout_marginTop="30dp"/>
+
+                <TextView
+                    android:id="@+id/txt_already_register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/already_register"
+                    android:layout_gravity="center"
+                    android:textStyle="italic"
+                    android:visibility="gone"
+                    android:textColor="@color/DarkBlue"
+                    android:layout_marginBottom="20dp"/>
+
+
+            </LinearLayout>
+
+
+
+            <!--  Activation layout -->
+
+            <LinearLayout
+                android:id="@+id/leanear_Activation_popup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_marginTop="20dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    app:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:padding="10dp"
+                        android:background="@drawable/activate"
+                        app:ignore="ContentDescription" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/activate_code"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:textAlignment="center"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_marginTop="5dp">
+                    </TextView>
+
+                </LinearLayout>
+
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:layout_marginTop="20dp">
+
+                    <EditText
+                        android:id="@+id/companyNumber_activate_popup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="@string/phone_number"
+                        android:gravity="left"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        app:ignore="Autofill" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    >
+
+
+                    <EditText
+                        android:id="@+id/editText_ActivateCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/darkGreen"
+                        android:hint="@string/enter_code"
+                        android:maxLength="6"
+                        android:gravity="left"
+                        android:inputType="numberDecimal"
+                        android:textSize="16sp"
+                        app:ignore="Autofill" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:visibility="visible">
+
+                    <EditText
+                        android:id="@+id/locationId_activation_popup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="Location ID"
+                        android:gravity="left"
+                        android:textSize="16sp"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/black"
+                        app:ignore="Autofill" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/button_Acticate_popup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/activate"
+                    android:textSize="18sp"
+                    android:textColor="@color/White"
+                    android:layout_gravity="center"
+                    android:theme="@style/MyButton"
+                    android:layout_marginTop="30dp" />
+
+                <TextView
+                    android:id="@+id/txt_new_register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/new_register"
+                    android:layout_gravity="center"
+                    android:textStyle="italic"
+                    android:textColor="@color/DarkBlue"
+                    android:layout_marginBottom="20dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

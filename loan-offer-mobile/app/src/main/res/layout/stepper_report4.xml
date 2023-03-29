@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Monitor your business "
+        android:textSize="25sp"
+        android:textColor="@color/darkestGreen"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:paddingBottom="20sp"/>
+    <ImageView
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:background="@drawable/slide4"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Watch your income grow"
+        android:padding="10dp"
+        android:textSize="20sp"
+        android:textColor="@color/black"/>
+
+</LinearLayout>

@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/toolBarBlue"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/header_itemDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Item Details"
+                android:textAlignment="center"
+                android:textColor="@color/pureWhite"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/payment_imgBtn_close"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@drawable/closered"
+                tools:ignore="ContentDescription" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Item No"
+                    android:textColor="@color/black"
+                    android:textAlignment="textStart"
+                    tools:ignore="MissingConstraints,RtlCompat" />
+
+
+                <TextView
+                    android:id="@+id/txtItemNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textAlignment="textEnd"
+                    tools:ignore="MissingConstraints,RtlCompat" />
+
+            </LinearLayout>
+
+
+            <include layout="@layout/view_line"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Item Name"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    tools:ignore="MissingConstraints,RtlCompat" />
+
+                <TextView
+                    android:id="@+id/txtItemName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:textAlignment="textEnd"
+                    android:textStyle="bold"
+                    tools:ignore="MissingConstraints,RtlCompat" />
+
+            </LinearLayout>
+
+            <include layout="@layout/view_line"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Item Qty"
+                    android:textColor="@color/black"
+                    android:textAlignment="textStart"
+                    tools:ignore="MissingConstraints,RtlCompat" />
+
+                <TextView
+                    android:id="@+id/txtItemQty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textAlignment="textEnd"
+                    android:textStyle="bold"
+                    tools:ignore="MissingConstraints,RtlCompat" />
+
+            </LinearLayout>
+
+            <include layout="@layout/view_line"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Selling Price"
+                    android:textColor="@color/black"
+                    android:textAlignment="textStart"
+                    tools:ignore="MissingConstraints,RtlCompat" />
+
+                <TextView
+                    android:id="@+id/txtItemSellingPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textAlignment="textEnd"
+                    android:textStyle="bold"
+                    tools:ignore="MissingConstraints,RtlCompat" />
+
+            </LinearLayout>
+
+            <include layout="@layout/view_line"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Category"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    tools:ignore="MissingConstraints,RtlCompat" />
+
+                <TextView
+                    android:id="@+id/txtItemCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:textAlignment="textEnd"
+                    android:textStyle="bold"
+                    tools:ignore="MissingConstraints,RtlCompat" />
+
+            </LinearLayout>
+
+            <include layout="@layout/view_line"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Sub Category"
+                    android:textColor="@color/black"
+                    android:textAlignment="textStart"
+                    tools:ignore="MissingConstraints,RtlCompat" />
+
+                <TextView
+                    android:id="@+id/txtItemSubCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textAlignment="textEnd"
+                    android:textStyle="bold"
+                    tools:ignore="MissingConstraints,RtlCompat" />
+
+            </LinearLayout>
+
+            <include layout="@layout/view_line"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:text="Purchase Price"
+                    android:textAlignment="textStart"
+                    tools:ignore="MissingConstraints,RtlCompat" />
+
+                <TextView
+                    android:id="@+id/txtItemPurchasePrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textAlignment="textEnd"
+                    tools:ignore="MissingConstraints,RtlCompat" />
+
+            </LinearLayout>
+
+            <include layout="@layout/view_line"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Expiry Date"
+                    android:textColor="@color/black"
+                    android:textAlignment="textStart"
+                    tools:ignore="MissingConstraints,RtlCompat" />
+
+                <TextView
+                    android:id="@+id/txtItemExpiryDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textAlignment="textEnd"
+                    android:textStyle="bold"
+                    tools:ignore="MissingConstraints,RtlCompat" />
+
+            </LinearLayout>
+
+            <include layout="@layout/view_line"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Default Discount"
+                    android:textColor="@color/black"
+                    android:textAlignment="textStart"
+                    tools:ignore="MissingConstraints,RtlCompat" />
+
+                <TextView
+                    android:id="@+id/txtItemDefDis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textAlignment="textEnd"
+                    android:textStyle="bold"
+                    tools:ignore="MissingConstraints,RtlCompat" />
+
+            </LinearLayout>
+
+            <include layout="@layout/view_line"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Maximum Discount"
+                    android:textColor="@color/black"
+                    android:textAlignment="textStart"
+                    tools:ignore="MissingConstraints,RtlCompat" />
+
+                <TextView
+                    android:id="@+id/txtItemMaxDis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:textAlignment="textEnd"
+                    android:textStyle="bold"
+                    tools:ignore="MissingConstraints,RtlCompat" />
+
+            </LinearLayout>
+
+            <include layout="@layout/view_line"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Reorder Qty"
+                    android:textColor="@color/black"
+                    android:textAlignment="textStart"
+                    tools:ignore="MissingConstraints,RtlCompat" />
+
+                <TextView
+                    android:id="@+id/txtItemReorderQty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textAlignment="textEnd"
+                    tools:ignore="MissingConstraints,RtlCompat" />
+
+            </LinearLayout>
+
+            <include layout="@layout/view_line"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Track with Inventory"
+                    android:textColor="@color/black"
+                    android:textAlignment="textStart"
+                    tools:ignore="MissingConstraints,RtlCompat" />
+
+                <TextView
+                    android:id="@+id/txtItemTWI"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textAlignment="textEnd"
+                    tools:ignore="MissingConstraints,RtlCompat" />
+
+            </LinearLayout>
+
+            <include layout="@layout/view_line"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Unit of Measure"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    tools:ignore="MissingConstraints,RtlCompat" />
+
+                <TextView
+                    android:id="@+id/txtItemUOM"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textAlignment="textEnd"
+                    android:textStyle="bold"
+                    tools:ignore="MissingConstraints,RtlCompat" />
+
+            </LinearLayout>
+
+            <include layout="@layout/view_line"/>
+        </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>

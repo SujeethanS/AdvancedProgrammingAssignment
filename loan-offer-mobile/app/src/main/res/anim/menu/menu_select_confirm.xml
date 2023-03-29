@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <menu xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <item
+            android:id="@+id/action_confirm"
+            android:title="Confirm"
+            android:orderInCategory="2"
+            android:icon="@drawable/ic_action_action_done"
+            android:animateLayoutChanges="false"
+            app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_close"
+        android:title="Close"
+        android:icon="@drawable/ic_action_navigation_close"
+        android:orderInCategory="2"
+        android:animateLayoutChanges="false"
+        app:showAsAction="always"/>
+
+</menu>

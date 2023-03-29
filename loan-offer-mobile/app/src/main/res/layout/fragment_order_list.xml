@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/orderlist_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pureWhite"
+    class =".OrderListFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".OrderListActivity"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="141dp"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView_OrderId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Order #: "
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView_orderId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView_Number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No of Items: "
+                    android:textAlignment="textEnd"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="0.5"
+                android:orientation="horizontal"
+                app:cardBackgroundColor="@color/recycler_color"
+                card_view:cardCornerRadius="3dp"
+                card_view:cardElevation="5dp">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/OrderList_Recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                card_view:cardCornerRadius="3dp"
+                card_view:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView_SubTotal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Sub Total"
+                            android:textSize="22dp" />
+
+                        <TextView
+                            android:id="@+id/textView_SubTotalSum"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:textSize="22dp" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/discount_view"
+                        android:visibility="gone"
+                        android:layout_width="fill_parent"
+                        android:layout_height="2dp"
+                        android:background="#c0c0c0"/>
+
+                    <LinearLayout
+                        android:id="@+id/discountLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView_Discount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Discount"
+                            android:textSize="22dp" />
+
+                        <TextView
+                            android:id="@+id/textView_DiscountSum"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:textSize="22dp" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/linearTaxLine"
+                        android:layout_width="fill_parent"
+                        android:layout_height="2dp"
+                        android:visibility="gone"
+                        android:background="#c0c0c0"/>
+
+                    <LinearLayout
+                        android:id="@+id/linearTax"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView_vat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tax"
+                            android:textSize="22dp" />
+
+                       <!-- <ImageButton
+                            android:id="@+id/imgBtn_TaxCalculation"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:textAlignment="center"
+                            android:text="Calculate"
+                            android:background="@drawable/calculate"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:theme="@style/MyButton1"
+                            />-->
+                        <TextView
+                            android:id="@+id/textView_vatSum"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:textSize="22dp" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="2dp"
+                        android:visibility="gone"
+                        android:background="#c0c0c0"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView_total"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Total"
+                            android:textStyle="bold"
+                            android:textSize="22dp" />
+
+                        <TextView
+                            android:id="@+id/textView_totalSum"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:textStyle="bold"
+                            android:textSize="22dp"
+                            android:textColor="@color/DarkRed"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_Back"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_weight="1"
+                    android:text="Back"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:theme="@style/MyButton1"
+                    />
+
+                <Button
+                    android:id="@+id/button_Discount"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_weight="1"
+                    android:text="Dis"
+                    android:textAlignment="center"
+                    android:visibility="gone"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:theme="@style/MyButton1"
+                    />
+
+                <Button
+                    android:id="@+id/button_Tax"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_weight="1"
+                    android:text="Tax"
+                    android:textAlignment="center"
+                    android:visibility="gone"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:theme="@style/MyButton1"
+                    />
+
+                <Button
+                    android:id="@+id/button_pay"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_weight="1"
+                    android:text="PAY"
+                    android:textAlignment="center"
+                    android:textColor="@color/pureWhite"
+                    android:textSize="20dp"
+                    android:theme="@style/MyButton" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

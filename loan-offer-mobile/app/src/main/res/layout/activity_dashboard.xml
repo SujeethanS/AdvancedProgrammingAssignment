@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray" >
+
+    <include layout="@layout/skeleton_shimmer_layout"/>
+
+    <LinearLayout
+        android:id="@+id/linearTotal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:background="@color/pureWhite"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/card_SalesReport"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    card_view:cardBackgroundColor="@color/pureWhite"
+                    card_view:cardCornerRadius="1dp"
+                    card_view:cardElevation="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.8"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                tools:ignore="ContentDescription"
+                                android:src="@drawable/salesreport_iconn"/>
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.3"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/total_salesText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:text="Total Month Sales"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/darkGreen"
+                                android:textSize="16sp"
+                                tools:ignore="SmallSp" />
+
+                            <TextView
+                                android:id="@+id/total_sales"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:text="@string/_0_00"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/DarkBlue"
+                                android:textSize="20sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+            <androidx.cardview.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_margin="5dp"
+                android:orientation="horizontal"
+                card_view:cardBackgroundColor="@color/pureWhite"
+                card_view:cardCornerRadius="1dp"
+                card_view:cardElevation="1dp">
+
+                <com.github.mikephil.charting.charts.CombinedChart
+                    android:id="@+id/horizontalLinechart"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <android.support.v7.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/card_SalesReport"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    card_view:cardBackgroundColor="@color/pureWhite"
+                    card_view:cardCornerRadius="1dp"
+                    card_view:cardElevation="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.8"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/sales_report"
+                                tools:ignore="ContentDescription" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.3"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/total_salesText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:text="@string/sales_report"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/darkGreen"
+                                android:textSize="10sp"
+                                tools:ignore="SmallSp" />
+
+                            <TextView
+                                android:id="@+id/total_sales"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:text="@string/_0_00"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/DarkBlue"
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+
+                <android.support.v7.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/card_ExpenseReport"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    card_view:cardBackgroundColor="@color/pureWhite"
+                    card_view:cardCornerRadius="1dp"
+                    card_view:cardElevation="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.8"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/expensereport"
+                                tools:ignore="ContentDescription" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.3"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/total_expenseText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:text="@string/expense_report"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/darkGreen"
+                                android:textSize="10sp"
+                                tools:ignore="SmallSp" />
+
+                            <TextView
+                                android:id="@+id/total_expense"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:text="@string/_0_00"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/DarkBlue"
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+
+                <androidx.cardview.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/card_ExpiryReport"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    card_view:cardBackgroundColor="@color/pureWhite"
+                    card_view:cardCornerRadius="1dp"
+                    card_view:cardElevation="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.8"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="5dp"
+                                tools:ignore="ContentDescription" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.3"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/total_expiry_itemText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:text="@string/expiry_items"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/darkGreen"
+                                android:textSize="10sp"
+                                tools:ignore="SmallSp" />
+
+                            <TextView
+                                android:id="@+id/total_expiry_item"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:text="@string/_0_0"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/DarkBlue"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/card_ReorderReport"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    card_view:cardBackgroundColor="@color/pureWhite"
+                    card_view:cardCornerRadius="1dp"
+                    card_view:cardElevation="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.8"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="5dp"
+                                tools:ignore="ContentDescription" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.3"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/total_re_order_itemText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:text="@string/reorder_items"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/darkGreen"
+                                android:textSize="10sp"
+                                tools:ignore="SmallSp"/>
+
+                            <TextView
+                                android:id="@+id/total_re_order_item"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:text="@string/_0_0"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/DarkBlue"
+                                android:textSize="16sp"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/top_ten_graph"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.1"
+                android:orientation="horizontal"
+                android:visibility="gone" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:ignore="UselessParent">
+
+
+                    <androidx.cardview.widget.CardView
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:orientation="horizontal"
+                        card_view:cardBackgroundColor="@color/pureWhite"
+                        card_view:cardCornerRadius="1dp"
+                        card_view:cardElevation="1dp">
+
+                        <com.github.mikephil.charting.charts.PieChart
+                            android:id="@+id/top"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                        </com.github.mikephil.charting.charts.PieChart>
+
+
+                        <SeekBar
+                            android:id="@+id/seekBar1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:max="200"
+                            android:paddingBottom="12dp"
+                            android:visibility="gone" />
+
+                        <SeekBar
+                            android:id="@+id/seekBar2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:max="1500"
+                            android:paddingBottom="12dp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/tvXMax1"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:visibility="gone"
+                            tools:ignore="RtlHardcoded" />
+
+                        <TextView
+                            android:id="@+id/tvYMax2"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:visibility="gone"
+                            tools:ignore="RtlHardcoded" />
+
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/bottom_ten_graph"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.1"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <androidx.cardview.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    card_view:cardBackgroundColor="@color/pureWhite"
+                    card_view:cardCornerRadius="1dp"
+                    card_view:cardElevation="1dp"
+                    tools:ignore="InefficientWeight,NestedWeights">
+
+                    <com.github.mikephil.charting.charts.PieChart
+                        android:id="@+id/bot"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    </com.github.mikephil.charting.charts.PieChart>
+
+                    <SeekBar
+                        android:id="@+id/seekBar3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:max="200"
+                        android:paddingBottom="12dp"
+                        android:visibility="gone" />
+
+                    <SeekBar
+                        android:id="@+id/seekBar4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:max="1500"
+                        android:paddingBottom="12dp"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tvXMax3"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:visibility="gone"
+                        tools:ignore="RtlHardcoded" />
+
+                    <TextView
+                        android:id="@+id/tvYMax4"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:visibility="gone"
+                        tools:ignore="RtlHardcoded" />
+
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/action_top"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.846"
+        android:visibility="gone"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+
+    <ImageView
+        android:id="@+id/action_bottom"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.846"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

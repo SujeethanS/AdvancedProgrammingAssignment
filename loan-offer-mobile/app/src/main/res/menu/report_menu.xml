@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_addcart"
+        android:icon="@drawable/ic_shopping_cart_white_48dp"
+        android:title="Add Cart"
+        android:orderInCategory="100"
+        app:actionLayout="@layout/menu_cartcount"
+        app:showAsAction="ifRoom"/>
+
+
+    <item
+        android:id="@+id/get_help"
+        android:title="Help"
+        android:orderInCategory="100"
+        android:visible="true"
+        android:icon="@drawable/help_iconn"
+        app:showAsAction="ifRoom"
+        />
+
+
+</menu>

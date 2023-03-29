@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".matchbox">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/menu_dashboard"
+            android:icon="@drawable/dash_board_icon"
+            android:title="@string/dashboard"
+            android:textSize="2sp"/>
+    </group>
+
+
+    <item
+        android:id="@+id/menu_exit"
+        android:icon="@drawable/exit_navigation_icon"
+        android:title="@string/logout"
+        android:textSize="2sp"/>
+
+</menu>

@@ -1,0 +1,27 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/tools"
+    tools:context="com.example.sample.YourActivity"
+    xmlns:kaleAcct="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    <!-- Search / will display always -->
+
+    <item android:id="@+id/search"
+        android:title="Search"
+        android:icon="@drawable/ic_action_action_search"
+        android:orderInCategory="11111"
+        kaleAcct:showAsAction="always"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        android:padding="15dp"/>
+
+    <item
+        android:id="@+id/menu_add_product"
+        android:icon="@drawable/add"
+        android:orderInCategory="11111"
+        android:title="Receive Inventory"
+        kaleAcct:showAsAction="ifRoom"
+        android:padding="15dp"
+        />
+
+</menu>

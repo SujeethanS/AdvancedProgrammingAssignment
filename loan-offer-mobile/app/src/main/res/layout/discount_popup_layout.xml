@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_marginBottom="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/darkGreen"
+        android:gravity="center"
+        >
+    <TextView
+        android:id="@+id/textView_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/order_discount"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColor="@color/pureWhite"
+        android:textSize="18sp"
+        android:layout_weight="1"/>
+
+        <ImageButton
+            android:id="@+id/imgBtn_close"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:background="@drawable/closered"
+            android:layout_weight="1"
+            tools:ignore="ContentDescription" />
+
+    </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp">
+
+    <!--<TextView
+        android:id="@+id/user_dis_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/discount"
+        android:layout_weight="1"
+        android:textSize="18sp" />-->
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        >
+
+    <EditText
+        android:id="@+id/user_dis_editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:backgroundTint="@color/darkGreen"
+        android:inputType="numberDecimal"
+        android:maxLength="5"
+        android:hint="@string/discount"
+        android:focusable="auto"
+        android:textSize="16sp"
+        tools:ignore="Autofill,LabelFor" />
+    </android.support.design.widget.TextInputLayout>
+
+
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        >
+
+        <RadioGroup
+            android:id="@+id/radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            tools:ignore="UselessParent">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:id="@+id/percentage_radio_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="@string/perchentage"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/amount_radio_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/amount"
+                android:textSize="16sp" />
+
+
+        </RadioGroup>
+    </LinearLayout>
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="horizontal"
+android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp">
+
+
+
+<Button
+    android:id="@+id/button_Save_qty"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ems="11"
+    android:text="@string/add"
+    android:layout_marginLeft="50dp"
+    android:layout_weight="1"
+    android:textColor="@color/White"
+    android:theme="@style/MyButton" />
+
+    <Button
+        android:id="@+id/button_Cancel_qty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="11"
+        android:layout_marginRight="50dp"
+        android:text="@string/cancel"
+        android:layout_weight="1"
+        android:textColor="@color/black"
+        android:theme="@style/MyButton1" />
+
+
+
+<!--<Button
+    android:id="@+id/button_Cancel_qty"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="30dp"
+    android:layout_marginRight="30dp"
+    android:layout_weight="1"
+    android:ems="11"
+    android:text="@string/cancel"
+    android:theme="@style/MyButton1"
+    tools:ignore="ButtonStyle" />-->
+</LinearLayout>
+    </LinearLayout>

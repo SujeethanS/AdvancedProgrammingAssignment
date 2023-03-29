@@ -5,7 +5,8 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 export default function BasicDatePicker(props) {
-  const [value, setValue] = useState(null);
+  const date = new Date();
+  const [value, setValue] = useState(date);
   const {datePickerOnChange} = props
 
   return (

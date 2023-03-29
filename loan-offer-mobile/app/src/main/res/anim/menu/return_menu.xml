@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+        <item
+            android:id="@+id/badge"
+            android:actionLayout="@layout/actionbar_badge_layout"
+            android:icon="@drawable/ic_shopping_cart_white_48dp"
+            app:showAsAction="always"
+            android:title="card">
+        </item>
+
+</menu>
