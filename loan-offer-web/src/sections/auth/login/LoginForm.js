@@ -39,7 +39,7 @@ export default function LoginForm() {
   });
 
   const handleClick = () =>  {
-
+    navigate('/dashboard', { replace: true });
     const errorObj = {
       userName:false,
       password:false,
@@ -88,6 +88,7 @@ export default function LoginForm() {
         <TextField 
           name="userName" 
           label="User Name"
+          InputLabelProps={{shrink: true}}
           autoComplete="email"
           value={myState.userName} 
           helperText={error.userName ? "Invalid User Name" : ""}
@@ -99,6 +100,7 @@ export default function LoginForm() {
           onChange={handleChange}
           name="password"
           label="Password"
+          InputLabelProps={{shrink: true}}
           type={showPassword ? 'text' : 'password'}
           helperText={error.password ? "Invalid Password" : ""}
           error={error.password}

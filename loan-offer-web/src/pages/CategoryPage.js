@@ -2,7 +2,7 @@
 import { Helmet } from 'react-helmet-async';
 import { faker } from '@faker-js/faker';
 import { filter } from 'lodash';
-import { sentenceCase } from 'change-case';
+import Grid from '@mui/material/Grid';
 import { useState } from 'react';
 // @mui
 import {
@@ -10,67 +10,57 @@ import {
   Table,
   Stack,
   Paper,
-  Avatar,
-  Button,
-  Popover,
   Checkbox,
   TableRow,
-  MenuItem,
   TableBody,
   TableCell,
   Container,
   Typography,
-  IconButton,
   TableContainer,
   TablePagination,
 } from '@mui/material';
 // components
-import Label from '../components/label';
-import Iconify from '../components/iconify';
+
 import Scrollbar from '../components/scrollbar';
 // sections
 import { UserListHead, UserListToolbar } from '../sections/@dashboard/user';
 // mock
 import AddProductDialog from '../components/dialog/AddProductDialog';
-import ViewProductDialog from '../components/dialog/ViewProductDialog';
 
 // ----------------------------------------------------------------------
 
 const TABLE_HEAD = [
-  { id: 'name', label: 'Name', alignRight: false },
-  { id: 'dob', label: 'Category', alignRight: false },
-  { id: 'balance', label: 'Brand', alignRight: false },
-  { id: 'mobile', label: 'Quantity', alignRight: false },
-  { id: 'email', label: 'Price', alignRight: false },
-  { id: '' },
+  { id: 'name', label: 'Name', alignRight: false }
 ];
-
-// ----------------------------------------------------------------------
 
 const USERLIST = [
   {
     "id": faker.datatype.uuid(),
-    "name":"Raj Shanjith",
-    "dob":"1994-01-01",  
-    "email":"raj@shanjith.com",
-    "mobile":"07775484569",
-    "balance":"12000.00"
+    "name":"Television"
   },
   {
     "id": faker.datatype.uuid(),
-    "name":"Theve Sujee",
-    "dob":"1990-03-05",    
-    "email":"theve@sujee.com",
-    "mobile":"0775858693",
-    "balance":"14000.00"
+    "name":"Watche"
   },
   {
     "id": faker.datatype.uuid(),
-    "name":"Siva Mathu",
-    "dob":"1990-02-05",
-    "email":"siva@mathu.com",
-    "mobile":"0775858673",
-    "balance":"10000.00"
+    "name":"Mobile Phone"
+  }
+];
+// ----------------------------------------------------------------------
+
+const USERLISTS = [
+  {
+    "id": faker.datatype.uuid(),
+    "name":"Samsung"
+  },
+  {
+    "id": faker.datatype.uuid(),
+    "name":"Sony"
+  },
+  {
+    "id": faker.datatype.uuid(),
+    "name":"Huawei"
   }
 ];
 
@@ -104,7 +94,7 @@ function applySortFilter(array, comparator, query) {
   return stabilizedThis.map((el) => el[0]);
 }
 
-export default function UserPage() {
+export default function ProductPage() {
 
   const [open, setOpen] = useState(null);
 
@@ -120,15 +110,6 @@ export default function UserPage() {
 
   const [rowsPerPage, setRowsPerPage] = useState(5);
 
-  const [selectedId, setSelectedId] = useState("");
-
-  const handleOpenMenu = (event) => {
-    setOpen(event.currentTarget);
-  };
-
-  const handleCloseMenu = () => {
-    setOpen(null);
-  };
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
@@ -139,6 +120,15 @@ export default function UserPage() {
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {
       const newSelecteds = USERLIST.map((n) => n.name);
+      setSelected(newSelecteds);
+      return;
+    }
+    setSelected([]);
+  };
+
+  const handleSelectAllClicks = (event) => {
+    if (event.target.checked) {
+      const newSelecteds = USERLISTS.map((n) => n.name);
       setSelected(newSelecteds);
       return;
     }
@@ -175,10 +165,14 @@ export default function UserPage() {
   };
 
   const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - USERLIST.length) : 0;
+  const emptyRowss = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - USERLISTS.length) : 0;
 
   const filteredUsers = applySortFilter(USERLIST, getComparator(order, orderBy), filterName);
+  const filteredUserss = applySortFilter(USERLISTS, getComparator(order, orderBy), filterName);
 
   const isNotFound = !filteredUsers.length && !!filterName;
+  const isNotFounds = !filteredUserss.length && !!filterName;
+
 
   return (
     <>
@@ -186,7 +180,9 @@ export default function UserPage() {
         <title> User | Bumble Bee </title>
       </Helmet>
 
-      <Container>
+      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+        <Grid item xs={6}>
+        <Container>
         <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
           <Typography variant="h4" gutterBottom>
             User
@@ -214,7 +210,7 @@ export default function UserPage() {
                 />
                 <TableBody>
                   {filteredUsers.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
-                    const { id, name, dob, email, mobile, balance } = row;
+                    const { id, name} = row;
                     const selectedUser = selected.indexOf(name) !== -1;
 
                     return (
@@ -233,21 +229,6 @@ export default function UserPage() {
                           </Stack>
                         </TableCell> */}
 
-                        <TableCell align="left">{dob}</TableCell>
-
-                        <TableCell align="left">{email}</TableCell>
-
-                        <TableCell align="left">{mobile}</TableCell>
-
-                        <TableCell align="left">
-                          <Label color={(balance === 'banned' && 'success') || 'success'}>{balance}</Label>
-                        </TableCell>
-
-                        <TableCell align="right">
-                          <IconButton size="large" color="inherit" onClick={handleOpenMenu}>
-                            <Iconify icon={'eva:more-vertical-fill'} />
-                          </IconButton>
-                        </TableCell>
                       </TableRow>
                     );
                   })}
@@ -296,39 +277,105 @@ export default function UserPage() {
           />
         </Card>
       </Container>
-
-      <Popover
-        open={Boolean(open)}
-        anchorEl={open}
-        onClose={handleCloseMenu}
-        anchorOrigin={{ vertical: 'top', horizontal: 'left' }}
-        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-        PaperProps={{
-          sx: {
-            p: 1,
-            width: 140,
-            '& .MuiMenuItem-root': {
-              px: 1,
-              typography: 'body2',
-              borderRadius: 0.75,
-            },
-          },
-        }}
-      >
-        <MenuItem onClick={()=>setSelectedId(5)}>
-          <Iconify icon={'eva:edit-fill'} sx={{ mr: 2 }} />
-          Edit
-        </MenuItem>
-
-        <MenuItem sx={{ color: 'error.main' }}>
-          <Iconify icon={'eva:trash-2-outline'} sx={{ mr: 2 }} />
-          Delete
-        </MenuItem>
-      </Popover>
-
-      {selectedId && <ViewProductDialog setSelectedId={setSelectedId} selectedId={selectedId} />}
         
+        </Grid>
+        <Grid item xs={6}>
+        <Container>
+        <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
+          <Typography variant="h4" gutterBottom>
+            User
+          </Typography>
+          {/* <Button variant="contained" startIcon={<Iconify icon="eva:plus-fill" />}>
+            New User
+          </Button> */}
+          <AddProductDialog />
+        </Stack>
 
+        <Card>
+          <UserListToolbar numSelected={selected.length} filterName={filterName} onFilterName={handleFilterByName} />
+
+          <Scrollbar>
+            <TableContainer sx={{ minWidth: 800 }}>
+              <Table>
+                <UserListHead
+                  order={order}
+                  orderBy={orderBy}
+                  headLabel={TABLE_HEAD}
+                  rowCount={USERLISTS.length}
+                  numSelected={selected.length}
+                  onRequestSort={handleRequestSort}
+                  onSelectAllClick={handleSelectAllClicks}
+                />
+                <TableBody>
+                  {filteredUserss.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
+                    const { id, name} = row;
+                    const selectedUser = selected.indexOf(name) !== -1;
+
+                    return (
+                      <TableRow hover key={id} tabIndex={-1} role="checkbox" selected={selectedUser}>
+                        <TableCell padding="checkbox">
+                          <Checkbox checked={selectedUser} onChange={(event) => handleClick(event, name)} />
+                        </TableCell>
+
+                        <TableCell align="left">{name}</TableCell>
+                        {/* <TableCell component="th" scope="row" padding="none">
+                          <Stack direction="row" alignItems="center" spacing={2}>
+                            <Avatar alt={name} src={avatarUrl} />
+                            <Typography variant="subtitle2" noWrap>
+                              {name}
+                            </Typography>
+                          </Stack>
+                        </TableCell> */}
+                      </TableRow>
+                    );
+                  })}
+                  {emptyRowss > 0 && (
+                    <TableRow style={{ height: 53 * emptyRowss }}>
+                      <TableCell colSpan={6} />
+                    </TableRow>
+                  )}
+                </TableBody>
+
+                {isNotFounds && (
+                  <TableBody>
+                    <TableRow>
+                      <TableCell align="center" colSpan={6} sx={{ py: 3 }}>
+                        <Paper
+                          sx={{
+                            textAlign: 'center',
+                          }}
+                        >
+                          <Typography variant="h6" paragraph>
+                            Not found
+                          </Typography>
+
+                          <Typography variant="body2">
+                            No results found for &nbsp;
+                            <strong>&quot;{filterName}&quot;</strong>.
+                            <br /> Try checking for typos or using complete words.
+                          </Typography>
+                        </Paper>
+                      </TableCell>
+                    </TableRow>
+                  </TableBody>
+                )}
+              </Table>
+            </TableContainer>
+          </Scrollbar>
+
+          <TablePagination
+            rowsPerPageOptions={[5, 10, 25]}
+            component="div"
+            count={USERLISTS.length}
+            rowsPerPage={rowsPerPage}
+            page={page}
+            onPageChange={handleChangePage}
+            onRowsPerPageChange={handleChangeRowsPerPage}
+          />
+        </Card>
+      </Container>
+        </Grid>
+      </Grid>
     </>
   );
 }

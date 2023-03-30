@@ -37,11 +37,11 @@ import ViewProductDialog from '../components/dialog/ViewProductDialog';
 // ----------------------------------------------------------------------
 
 const TABLE_HEAD = [
-  { id: 'name', label: 'Name', alignRight: false },
-  { id: 'dob', label: 'Category', alignRight: false },
-  { id: 'balance', label: 'Brand', alignRight: false },
-  { id: 'mobile', label: 'Quantity', alignRight: false },
-  { id: 'email', label: 'Price', alignRight: false },
+  { id: 'name', label: 'ID', alignRight: false },
+  { id: 'customer', label: 'Customer', alignRight: false },
+  { id: 'date', label: 'Date', alignRight: false },
+  { id: 'status', label: 'Status', alignRight: false },
+  { id: 'total', label: 'Total', alignRight: false },
   { id: '' },
 ];
 
@@ -50,27 +50,35 @@ const TABLE_HEAD = [
 const USERLIST = [
   {
     "id": faker.datatype.uuid(),
-    "name":"Raj Shanjith",
-    "dob":"1994-01-01",  
-    "email":"raj@shanjith.com",
-    "mobile":"07775484569",
-    "balance":"12000.00"
+    "name":"1",
+    "customer":"Siva Mathu",
+    "date":"2023-03-18",
+    "status":"Installment",
+    "total":"1400.00"
   },
   {
     "id": faker.datatype.uuid(),
-    "name":"Theve Sujee",
-    "dob":"1990-03-05",    
-    "email":"theve@sujee.com",
-    "mobile":"0775858693",
-    "balance":"14000.00"
+    "name":"2",
+    "customer":"Siva Mathu",
+    "date":"2023-03-10",
+    "status":"Completed",
+    "total":"6500.00"
   },
   {
     "id": faker.datatype.uuid(),
-    "name":"Siva Mathu",
-    "dob":"1990-02-05",
-    "email":"siva@mathu.com",
-    "mobile":"0775858673",
-    "balance":"10000.00"
+    "name":"3",
+    "customer":"Theve Sujee",
+    "date":"2023-03-25",
+    "status":"Completed",
+    "total":"9800.00"
+  },
+  {
+    "id": faker.datatype.uuid(),
+    "name":"4",
+    "customer":"Raj Shanjith",
+    "date":"2023-03-25",
+    "status":"Installment",
+    "total":"15000.00"
   }
 ];
 
@@ -104,7 +112,7 @@ function applySortFilter(array, comparator, query) {
   return stabilizedThis.map((el) => el[0]);
 }
 
-export default function UserPage() {
+export default function OrderPage() {
 
   const [open, setOpen] = useState(null);
 
@@ -214,7 +222,7 @@ export default function UserPage() {
                 />
                 <TableBody>
                   {filteredUsers.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
-                    const { id, name, dob, email, mobile, balance } = row;
+                    const { id, name, customer, date, status, total } = row;
                     const selectedUser = selected.indexOf(name) !== -1;
 
                     return (
@@ -232,15 +240,16 @@ export default function UserPage() {
                             </Typography>
                           </Stack>
                         </TableCell> */}
+                        <TableCell align="left">{customer}</TableCell>
 
-                        <TableCell align="left">{dob}</TableCell>
-
-                        <TableCell align="left">{email}</TableCell>
-
-                        <TableCell align="left">{mobile}</TableCell>
+                        <TableCell align="left">{date}</TableCell>
 
                         <TableCell align="left">
-                          <Label color={(balance === 'banned' && 'success') || 'success'}>{balance}</Label>
+                        <Label color={(status === 'Completed' && 'success') || 'error'}>{status}</Label>
+                        </TableCell>
+
+                        <TableCell align="left">
+                          <Label color={(status === 'Completed' && 'success') || 'error'}>{total}</Label>
                         </TableCell>
 
                         <TableCell align="right">

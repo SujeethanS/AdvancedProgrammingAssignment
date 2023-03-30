@@ -22,20 +22,45 @@ const navConfig = [
     icon: icon('ic_cart'),
   },
   {
-    title: 'blog',
-    path: '/dashboard/blog',
-    icon: icon('ic_blog'),
+    title: 'category',
+    path: '/dashboard/category',
+    icon: icon('ic_cart'),
   },
   {
-    title: 'login',
-    path: '/login',
-    icon: icon('ic_lock'),
+    title: 'order',
+    path: '/dashboard/order',
+    icon: icon('ic_cart'),
   },
   {
-    title: 'Not found',
-    path: '/404',
-    icon: icon('ic_disabled'),
+    title: 'payment',
+    path: '/dashboard/payment',
+    icon: icon('ic_cart'),
   },
+  {
+    title: 'orderPayment',
+    path: '/dashboard/orderpayment',
+    icon: icon('ic_cart'),
+  },
+  {
+    title: 'customerPayment',
+    path: '/dashboard/customerpayment',
+    icon: icon('ic_cart'),
+  }
+  // {
+  //   title: 'blog',
+  //   path: '/dashboard/blog',
+  //   icon: icon('ic_blog'),
+  // },
+  // {
+  //   title: 'login',
+  //   path: '/login',
+  //   icon: icon('ic_lock'),
+  // },
+  // {
+  //   title: 'Not found',
+  //   path: '/404',
+  //   icon: icon('ic_disabled'),
+  // },
 ];
 
 export default navConfig;

@@ -40,6 +40,7 @@
     "@emotion/styled": "^11.10.4",
     "@faker-js/faker": "^7.6.0",
     "@iconify/react": "^4.0.0",
+    "@mui/icons-material": "^5.11.11",
     "@mui/lab": "^5.0.0-alpha.103",
     "@mui/material": "^5.10.9",
     "@mui/x-date-pickers": "^5.0.19",
@@ -65,6 +66,7 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.1",
     "simplebar-react": "^2.4.3",
+    "validator": "^13.9.0",
     "web-vitals": "^3.0.3",
     "yup": "^0.32.11"
   },

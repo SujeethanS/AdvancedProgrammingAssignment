@@ -8,8 +8,13 @@ import UserPage from './pages/UserPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import Page404 from './pages/Page404';
-import ProductsPage from './pages/ProductsPage';
+import ProductPage from './pages/ProductPage';
 import DashboardAppPage from './pages/DashboardAppPage';
+import CategoryPage from './pages/CategoryPage';
+import PaymentPage from './pages/PaymentPage';
+import OrderPage from './pages/OrderPage';
+import OrderPaymentPage from './pages/OrderPaymentPage';
+import CustomerPaymentPage from './pages/CustomerPaymentPage';
 
 // ----------------------------------------------------------------------
 
@@ -22,8 +27,14 @@ export default function Router() {
         { element: <Navigate to="/dashboard/app" />, index: true },
         { path: 'app', element: <DashboardAppPage /> },
         { path: 'user', element: <UserPage /> },
-        { path: 'products', element: <ProductsPage /> },
-        { path: 'blog', element: <BlogPage /> },
+        { path: 'products', element: <ProductPage /> },
+        { path: 'category', element: <CategoryPage /> },
+        { path: 'order', element: <OrderPage /> },
+        { path: 'payment', element: <PaymentPage /> },
+        { path: 'orderpayment', element: <OrderPaymentPage /> },
+        { path: 'customerpayment', element: <CustomerPaymentPage /> }
+
+        // { path: 'blog', element: <BlogPage /> },
       ],
     },
     {

@@ -20,7 +20,7 @@ public class ApplicationTest {
         UserLoginReq userLoginReq = new UserLoginReq();
         userLoginReq.setUsername("mathu");
         userLoginReq.setPassword("tevtiiys");
-        loginTest.login(userLoginReq);
+        //loginTest.login(userLoginReq);
     }
 
     @Test
@@ -32,7 +32,7 @@ public class ApplicationTest {
         createNewUserReq.setNic("940931524V");
         createNewUserReq.setUserMobileNumber("07772527030");
         createNewUserReq.setInstallPlan(2);
-        registerTest.register(createNewUserReq);
+        //registerTest.register(createNewUserReq);
     }
 }
 

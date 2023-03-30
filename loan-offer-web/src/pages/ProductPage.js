@@ -38,10 +38,10 @@ import ViewProductDialog from '../components/dialog/ViewProductDialog';
 
 const TABLE_HEAD = [
   { id: 'name', label: 'Name', alignRight: false },
-  { id: 'dob', label: 'Category', alignRight: false },
-  { id: 'balance', label: 'Brand', alignRight: false },
-  { id: 'mobile', label: 'Quantity', alignRight: false },
-  { id: 'email', label: 'Price', alignRight: false },
+  { id: 'category', label: 'Category', alignRight: false },
+  { id: 'brand', label: 'Brand', alignRight: false },
+  { id: 'qty', label: 'Quantity', alignRight: false },
+  { id: 'price', label: 'Price', alignRight: false },
   { id: '' },
 ];
 
@@ -50,27 +50,35 @@ const TABLE_HEAD = [
 const USERLIST = [
   {
     "id": faker.datatype.uuid(),
-    "name":"Raj Shanjith",
-    "dob":"1994-01-01",  
-    "email":"raj@shanjith.com",
-    "mobile":"07775484569",
-    "balance":"12000.00"
+    "name":"Samsung A10",
+    "category":"Mobile Phone",
+    "brand":"Samsung",
+    "qty":"3",
+    "price":"8000.00"
   },
   {
     "id": faker.datatype.uuid(),
-    "name":"Theve Sujee",
-    "dob":"1990-03-05",    
-    "email":"theve@sujee.com",
-    "mobile":"0775858693",
-    "balance":"14000.00"
+    "name":"Samsung Watch",
+    "category":"Watches",
+    "brand":"Samsung",
+    "qty":"5",
+    "price":"15000.00"
   },
   {
     "id": faker.datatype.uuid(),
-    "name":"Siva Mathu",
-    "dob":"1990-02-05",
-    "email":"siva@mathu.com",
-    "mobile":"0775858673",
-    "balance":"10000.00"
+    "name":"32 inch TV",
+    "category":"Television",
+    "brand":"Sony",
+    "qty":"5",
+    "price":"11000.00"
+  },
+  {
+    "id": faker.datatype.uuid(),
+    "name":"12V charger",
+    "category":"Charger",
+    "brand":"huawei",
+    "qty":"6",
+    "price":"10000.00"
   }
 ];
 
@@ -104,7 +112,7 @@ function applySortFilter(array, comparator, query) {
   return stabilizedThis.map((el) => el[0]);
 }
 
-export default function UserPage() {
+export default function ProductPage() {
 
   const [open, setOpen] = useState(null);
 
@@ -214,7 +222,7 @@ export default function UserPage() {
                 />
                 <TableBody>
                   {filteredUsers.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
-                    const { id, name, dob, email, mobile, balance } = row;
+                    const { id, name, category, brand, qty, price } = row;
                     const selectedUser = selected.indexOf(name) !== -1;
 
                     return (
@@ -233,14 +241,14 @@ export default function UserPage() {
                           </Stack>
                         </TableCell> */}
 
-                        <TableCell align="left">{dob}</TableCell>
+                        <TableCell align="left">{category}</TableCell>
 
-                        <TableCell align="left">{email}</TableCell>
+                        <TableCell align="left">{brand}</TableCell>
 
-                        <TableCell align="left">{mobile}</TableCell>
+                        <TableCell align="left">{qty}</TableCell>
 
                         <TableCell align="left">
-                          <Label color={(balance === 'banned' && 'success') || 'success'}>{balance}</Label>
+                          <Label color={(price === 'banned' && 'success') || 'success'}>{price}</Label>
                         </TableCell>
 
                         <TableCell align="right">
